@@ -3,161 +3,126 @@
     "id": 1,
     "name": "Garden",
     "href": "/archive/the-demo-archive-slug",
-    "thumbnail": "https://images.unsplash.com/photo-1533090161767-e6ffed986c88?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=550&q=80",
+    "thumbnail": "https://images.pexels.com/photos/3689875/pexels-photo-3689875.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     "count": 13,
-    "color": "indigo"
+    "color": "indigo",
+    "description": "Explore a world of lush greenery and vibrant blossoms with our garden collection. From tools and accessories to help you nurture your plants, to outdoor furniture for creating a serene retreat, we have everything to make your garden flourish."
   },
   {
     "id": 2,
     "name": "Jewelry",
     "href": "/archive/the-demo-archive-slug",
-    "thumbnail": "https://images.unsplash.com/photo-1485841890310-6a055c88698a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=550&q=80",
+    "thumbnail": "https://images.pexels.com/photos/3254429/pexels-photo-3254429.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     "count": 16,
-    "color": "red"
+    "color": "red",
+    "description": "Adorn yourself with elegance and style through our exquisite jewelry selection. Discover finely crafted pieces, from sparkling gemstones to delicate metalwork, that add a touch of glamour to any occasion."
   },
   {
     "id": 3,
     "name": "Industrial",
     "href": "/archive/the-demo-archive-slug",
-    "thumbnail": "https://images.unsplash.com/photo-1459411552884-841db9b3cc2a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80",
+    "thumbnail": "https://images.pexels.com/photos/2625766/pexels-photo-2625766.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     "count": 15,
-    "color": "yellow"
+    "color": "yellow",
+    "description": "Dive into the realm of precision and innovation with our industrial products. From heavy machinery to advanced manufacturing equipment, our collection caters to professionals seeking cutting-edge solutions for their work"
   },
   {
     "id": 4,
     "name": "Tools",
     "href": "/archive/the-demo-archive-slug",
-    "thumbnail": "https://images.unsplash.com/photo-1491406213019-05b162a72c20?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80",
+    "thumbnail": "https://images.pexels.com/photos/910625/pexels-photo-910625.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     "count": 21,
-    "color": "pink"
+    "color": "green",
+    "description": "  Empower your DIY projects with our comprehensive range of tools. Whether you're a seasoned craftsman or a casual fixer-upper, our selection of quality tools will help you tackle any task with confidence."
   },
   {
     "id": 5,
     "name": "Automotive",
     "href": "/archive/the-demo-archive-slug",
-    "thumbnail": "https://images.unsplash.com/photo-1528297506728-9533d2ac3fa4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+    "thumbnail": "https://images.pexels.com/photos/3330175/pexels-photo-3330175.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     "count": 16,
-    "color": "pink"
+    "color": "purple",
+    "description": "  Uncover the world of automotive excellence with our selection of vehicle parts, accessories, and care products. Enhance the performance and appearance of your ride while keeping it in top-notch condition.    "
   },
   {
     "id": 6,
     "name": "Toys",
     "href": "/archive/the-demo-archive-slug",
-    "thumbnail": "https://images.unsplash.com/photo-1534349762230-e0cadf78f5da?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80",
+    "thumbnail": "https://images.pexels.com/photos/1029614/pexels-photo-1029614.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     "count": 25,
-    "color": "blue"
+    "color": "blue",
+    "description": "Ignite the joy of play with our diverse collection of toys for all ages. From educational games to interactive plushies, our toys are designed to entertain, inspire, and bring smiles to kids and adults alike.    "
   },
   {
     "id": 7,
     "name": "Outdoors",
     "href": "/archive/the-demo-archive-slug",
-    "thumbnail": "https://images.unsplash.com/photo-1498049794561-7780e7231661?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+    "thumbnail": "https://images.pexels.com/photos/325812/pexels-photo-325812.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     "count": 14,
-    "color": "gray"
+    "color": "teal",
+    "description": " Embrace the great outdoors with our selection of gear and equipment. Whether you're an adventurer, camper, or sports enthusiast, we offer products to enhance your outdoor experiences "
   },
   {
     "id": 8,
     "name": "Health",
     "href": "/archive/the-demo-archive-slug",
-    "thumbnail": "https://images.unsplash.com/photo-1512686096451-a15c19314d59?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80",
+    "thumbnail": "https://images.pexels.com/photos/140971/pexels-photo-140971.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     "count": 4,
-    "color": "purple"
+    "color": "amber",
+    "description": "  Prioritize your well-being with our health-focused products. From fitness equipment to wellness essentials, we're committed to helping you lead a balanced and healthy lifestyle"
   },
   {
     "id": 9,
     "name": "Electronics",
     "href": "/archive/the-demo-archive-slug",
-    "thumbnail": "https://images.unsplash.com/photo-1546015018-8f2e2f225773?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80",
+    "thumbnail": "https://images.pexels.com/photos/925684/pexels-photo-925684.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     "count": 7,
-    "color": "red"
+    "color": "lime",
+    "description": " Stay connected and tech-savvy with our electronic gadgets and devices. Discover the latest innovations, from smart home solutions to cutting-edge entertainment electronics "
   },
   {
     "id": 10,
-    "name": "Industrial",
+    "name": "Books",
     "href": "/archive/the-demo-archive-slug",
-    "thumbnail": "https://images.unsplash.com/photo-1512658740823-0ebb97b3b86e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+    "thumbnail": "https://images.pexels.com/photos/933498/pexels-photo-933498.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     "count": 26,
-    "color": "blue"
+    "color": "fuchsia",
+    "description": " Immerse yourself in the world of literature with our curated collection of books. From bestsellers to hidden gems, our assortment caters to a variety of interests and genres "
   },
   {
     "id": 11,
-    "name": "Health",
+    "name": "Travel",
     "href": "/archive/the-demo-archive-slug",
-    "thumbnail": "https://images.unsplash.com/photo-1616504132588-0eeeb5213fc2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=80",
+    "thumbnail": "https://images.pexels.com/photos/914114/pexels-photo-914114.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     "count": 20,
-    "color": "indigo"
+    "color": "cyan",
+    "description": " Embark on unforgettable journeys with our travel-oriented products. Whether you're a jetsetter or a road-trip enthusiast, we provide essentials to make your travels seamless and enjoyable "
   },
   {
     "id": 12,
-    "name": "Toys",
+    "name": "Natural",
     "href": "/archive/the-demo-archive-slug",
-    "thumbnail": "https://images.unsplash.com/photo-1563396983906-b3795482a59a?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fHRveXN8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+    "thumbnail": "https://images.pexels.com/photos/929661/pexels-photo-929661.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     "count": 22,
-    "color": "indigo"
+    "color": "orange",
+    "description": " Connect with nature through our range of natural products. From organic skincare to eco-friendly home goods, our selection supports a sustainable and nature-inspired lifestyle "
   },
   {
     "id": 13,
     "name": "Sports",
     "href": "/archive/the-demo-archive-slug",
-    "thumbnail": "https://images.unsplash.com/photo-1604935067269-27c7e8b36618?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+    "thumbnail": "https://images.pexels.com/photos/584764/pexels-photo-584764.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     "count": 15,
-    "color": "green"
+    "color": "lightGreen",
+    "description": " Elevate your sporting endeavors with our sports equipment and apparel. Whether you're a professional athlete or a recreational player, our products are designed to enhance your performance "
   },
   {
     "id": 14,
-    "name": "Automotive",
+    "name": "Animals",
     "href": "/archive/the-demo-archive-slug",
-    "thumbnail": "https://images.unsplash.com/photo-1567978581684-802453e2e2af?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+    "thumbnail": "https://images.pexels.com/photos/926963/pexels-photo-926963.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     "count": 9,
-    "color": "green"
-  },
-  {
-    "id": 15,
-    "name": "Computers",
-    "href": "/archive/the-demo-archive-slug",
-    "thumbnail": "https://images.unsplash.com/photo-1532529867795-3c83442c1e5c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
-    "count": 26,
-    "color": "blue"
-  },
-  {
-    "id": 16,
-    "name": "Design",
-    "href": "/archive/the-demo-archive-slug",
-    "thumbnail": "https://images.unsplash.com/photo-1536329583941-14287ec6fc4e?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGRlc2lnbnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-    "count": 15,
-    "color": "indigo"
-  },
-  {
-    "id": 17,
-    "name": "Beauty",
-    "href": "/archive/the-demo-archive-slug",
-    "thumbnail": "https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YmVhdXR5fGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-    "count": 27,
-    "color": "red"
-  },
-  {
-    "id": 18,
-    "name": "Books",
-    "href": "/archive/the-demo-archive-slug",
-    "thumbnail": "https://images.unsplash.com/photo-1543002588-bfa74002ed7e?ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8Ym9va3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-    "count": 25,
-    "color": "pink"
-  },
-  {
-    "id": 19,
-    "name": "life Style",
-    "href": "/archive/the-demo-archive-slug",
-    "thumbnail": "https://images.unsplash.com/photo-1511988617509-a57c8a288659?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
-    "count": 18,
-    "color": "green"
-  },
-
-  {
-    "id": 20,
-    "name": "Graphic Design",
-    "href": "/archive/the-demo-archive-slug",
-    "thumbnail": "https://images.unsplash.com/photo-1619616713221-a511d7037e06?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTl8fGdyYXBoaWMlMjBkZXNpZ258ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-    "count": 25,
-    "color": "gray"
+    "color": "lightBlue",
+    "description": "Celebrate the animal kingdom with our animal-focused products. From pet care supplies to wildlife-inspired decor, we cater to animal lovers and their companions  "
   }
 ]

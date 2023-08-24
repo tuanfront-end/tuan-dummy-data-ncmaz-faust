@@ -40,19 +40,63 @@ function tuan_dummy_data_page()
     <h1>Tuan Dummy Data For Ncmaz Faustjs</h1>
     <p>Click button to insert dummy data to your wordpress site. Plugin này yêu cầu đi cùng plugin ncmaz-faust-core và acf!</p>
 
-    <!-- // Tạo form để submit dữ liệu -->
+    <!-- // Tạo form để submit dữ liệu POSTS-->
     <form method="post" action="#">
         <input type="hidden" name="tuan_insert_posts" value="tuan_dummy_data">
+
+
+        <!-- posts files -->
+        <input type="checkbox" id="insert_posts_default" name="insert_posts_default" value="insert_posts_default">
+        <label for="insert_posts_default"> I want insert: posts default! </label><br>
+
+        <!-- posts audio files -->
+        <input type="checkbox" id="insert_posts_audio" name="insert_posts_audio" value="insert_posts_audio">
+        <label for="insert_posts_audio"> I want insert: posts audio! </label><br>
+
+        <!-- posts video files -->
+        <input type="checkbox" id="insert_posts_video" name="insert_posts_video" value="insert_posts_video">
+        <label for="insert_posts_video"> I want insert: posts video! </label><br>
+
+        <!-- posts audio files -->
+        <input type="checkbox" id="insert_posts_gallery" name="insert_posts_gallery" value="insert_posts_gallery">
+        <label for="insert_posts_gallery"> I want insert: posts gallery! </label><br>
+
+        <!-- posts news files -->
+        <input type="checkbox" id="insert_posts_news" name="insert_posts_news" value="insert_posts_news">
+        <label for="insert_posts_news"> I want insert: posts news! </label><br>
+
+        <hr>
+
         <!-- checkbox is check json file -->
         <input type="checkbox" id="tuan_only_check_json" name="tuan_only_check_json" value="tuan_only_check_json">
         <label for="tuan_only_check_json"> I only want check json files</label><br>
 
         <!-- checkbox is check json file -->
         <input type="checkbox" id="tuan_ok_for_insert" name="tuan_ok_for_insert" value="tuan_ok_for_insert">
-        <label for="tuan_ok_for_insert"> OK! now I want inset posts! </label><br>
+        <label for="tuan_ok_for_insert"> OK! now I want insert posts! </label><br>
+        <hr>
+
+        <input type="submit" value="Insert Dummy Data - Posts" class="button-primary">
+    </form>
+
+    <hr>
+    <hr>
+    <hr>
+    <!-- // Tạo form để submit dữ liệu  CATEGORIES-->
+    <form method="post" action="#">
+        <input type="hidden" name="tuan_insert_categories" value="tuan_dummy_data">
+
+        <!-- checkbox is check json file -->
+        <input type="checkbox" id="tuan_only_check_cat_json" name="tuan_only_check_cat_json" value="tuan_only_check_cat_json">
+        <label for="tuan_only_check_cat_json"> I only want check json files</label><br>
+
+        <!-- checkbox is check json file -->
+        <input type="checkbox" id="tuan_ok_for_cat_insert" name="tuan_ok_for_cat_insert" value="tuan_ok_for_cat_insert">
+        <label for="tuan_ok_for_cat_insert"> OK! now I want insert categories! </label><br>
+        <hr>
 
         <br>
-        <input type="submit" value="Insert Dummy Data - Posts" class="button-primary">
+        <input type="submit" value="Insert Dummy Data - Categories" class="button-primary">
     </form>
 
 <?php
@@ -94,9 +138,32 @@ function tuan_dummy_data_handle_insert_posts()
         return;
     } else {
 
-        $allDataArray = array_merge($dataArray1, $dataArrayNews, $dataArrayAudio, $dataArrayVideo, $dataArrayGallery);
+        $allDataArray = [];
+
+        // check json file
+        if (($_POST['insert_posts_default'] ?? "") === 'insert_posts_default') {
+            $allDataArray = array_slice($dataArray1, 0, 30);
+        }
+
+        if (($_POST['insert_posts_news'] ?? "") === 'insert_posts_news') {
+            $allDataArray = array_slice($dataArrayNews, 0, 10);
+        }
+
+        if (($_POST['insert_posts_audio'] ?? "") === 'insert_posts_audio') {
+            $allDataArray = array_slice($dataArrayAudio, 0, 10);
+        }
+
+        if (($_POST['insert_posts_video'] ?? "") === 'insert_posts_video') {
+            $allDataArray = array_slice($dataArrayVideo, 0, 10);
+        }
+
+        if (($_POST['insert_posts_gallery'] ?? "") === 'insert_posts_gallery') {
+            $allDataArray = array_slice($dataArrayGallery, 0, 10);
+        }
+
 
         if (($_POST['tuan_only_check_json'] ?? "") === 'tuan_only_check_json') {
+
             echo '<h1>Check json file success!</h1>';
             echo '<pre>';
             print_r($allDataArray);
@@ -122,11 +189,16 @@ function tuan_dummy_data_handle_insert_posts()
             // Tạo bài viết mới
             $post_id = wp_insert_post($new_post);
 
-            if (!$post_id) {
+            // Kiểm tra xem có lỗi xảy ra khi tạo bài viết hay không
+            if (is_wp_error($post_id)) {
+                echo "Không thể tạo bài viết mới";
+                return;
+            }
 
-                // Tạo thumbnail cho bài viết
-                $image_url = $item['featuredImage'];
-                $image_id = media_sideload_image($image_url, $post_id,  $item['title'], 'id');
+            if (!is_wp_error($post_id)) {
+
+                // Tạo thumbnail cho bài viết 
+                $image_id = media_sideload_image($item['featuredImage'], $post_id,  $item['title'], 'id');
 
                 if (!is_wp_error($image_id)) {
                     set_post_thumbnail($post_id, $image_id);
@@ -194,5 +266,77 @@ function tuan_dummy_data_handle_insert_posts()
         // Sau khi xử lý, chuyển hướng đến trang edit.php
         wp_redirect(admin_url('edit.php'));
         exit; // Đảm bảo không có mã HTML/PHP tiếp theo sau redirect
+    }
+}
+
+
+// viet ham xu ly khi click vao button insert dummy data (insert categories)
+add_action('admin_init', 'tuan_dummy_data_handle_insert_categories');
+function tuan_dummy_data_handle_insert_categories()
+{
+
+    // Kiem tra xem co phai la form insert categories hay khong
+    if (($_POST['tuan_insert_categories'] ?? "") !== 'tuan_dummy_data') {
+        return;
+    }
+
+    // Doc noi dung cua tep JSON
+    $jsonData = file_get_contents(plugin_dir_path(__FILE__) . 'jsons/__taxonomies.json');
+
+    // Chuyen doi du lieu JSON thanh mang PHP
+    $dataArray = json_decode($jsonData, true);
+
+    // Kiem tra xem chuyen doi co thanh cong khong
+    if (!$dataArray) {
+        echo "Khong the chuyen doi du lieu JSON / Khong tim thay file json.";
+        return;
+    } else {
+
+        // check json file
+        if (($_POST['tuan_only_check_cat_json'] ?? "") === 'tuan_only_check_cat_json') {
+            echo '<h1>Check json file success!</h1>';
+            echo '<pre>';
+            print_r($dataArray);
+            echo '</pre>';
+            return;
+        }
+
+        if (($_POST['tuan_ok_for_cat_insert'] ?? "") !== 'tuan_ok_for_cat_insert') {
+            return;
+        }
+
+        // insert categories to wp from this array data 
+        foreach ($dataArray as $item) {
+            $new_category = array(
+                'cat_name'    => wp_strip_all_tags($item['name']),
+                'category_description'  => $item['description'],
+                'category_nicename'   => sanitize_title($item['name']),
+                'taxonomy'     => 'category',
+            );
+            // Tao category moi
+            $term_id = wp_insert_category($new_category);
+
+            // Kiem tra xem co loi xay ra khi tao category hay khong
+            if (is_wp_error($term_id)) {
+                echo "Khong the tao category moi";
+                return;
+            }
+
+            // update color for category
+            update_field('color', $item['color'], 'category_' . $term_id);
+
+            // update image for category
+            if (!empty($item["thumbnail"])) :
+                $thumn_id = media_sideload_image($item["thumbnail"], 0, "Image description", 'id');
+                if (!is_wp_error($thumn_id)) {
+                    update_field('featured_image', $thumn_id, 'category_' . $term_id);
+                }
+            endif;
+            // 
+        }
+
+        // Sau khi xu ly, chuyen huong den trang edit-tags.php
+        wp_redirect(admin_url('edit-tags.php?taxonomy=category'));
+        exit; // Dam bao khong co ma HTML/PHP tiep theo sau redirect
     }
 }
