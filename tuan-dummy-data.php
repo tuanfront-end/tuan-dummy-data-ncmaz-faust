@@ -41,6 +41,7 @@ function tuan_dummy_data_page()
     <p>Click button to insert dummy data to your wordpress site. Plugin này yêu cầu đi cùng plugin ncmaz-faust-core và acf!</p>
 
     <!-- // Tạo form để submit dữ liệu POSTS-->
+    <h2>Insert Posts from JSON files </h2>
     <form method="post" action="#">
         <input type="hidden" name="tuan_insert_posts" value="tuan_dummy_data">
 
@@ -82,7 +83,9 @@ function tuan_dummy_data_page()
     <hr>
     <hr>
     <hr>
+
     <!-- // Tạo form để submit dữ liệu  CATEGORIES-->
+    <h2>Insert Categories from JSON file</h2>
     <form method="post" action="#">
         <input type="hidden" name="tuan_insert_categories" value="tuan_dummy_data">
 
@@ -97,6 +100,26 @@ function tuan_dummy_data_page()
 
         <br>
         <input type="submit" value="Insert Dummy Data - Categories" class="button-primary">
+    </form>
+
+    <hr>
+    <hr>
+    <hr>
+
+    <!-- // Tạo form để submit dữ liệu  Excerpt -->
+    <h2>Update Excerpt for all posts</h2>
+    <form style="display: block;" method="post" action="#">
+        <input type="hidden" name="tuan_update_excerpt_all_posts" value="tuan_dummy_data">
+        <!-- checkbox is check json file -->
+        <textarea style="width: 80%;" id="excerpt_for_all_posts" name="excerpt_for_all_posts" placeholder="Excerpt ..." rows="5"></textarea>
+        <br>
+
+        <!-- checkbox is check json file -->
+        <input type="checkbox" id="tuan_ok_update_excerpt" name="tuan_ok_update_excerpt" value="tuan_ok_update_excerpt">
+        <label for="tuan_ok_update_excerpt"> OK! now I want update excerpt! </label><br>
+
+        <br>
+        <input type="submit" value="Insert Dummy Data - Excerpt" class="button-primary">
     </form>
 
 <?php
@@ -337,6 +360,53 @@ function tuan_dummy_data_handle_insert_categories()
 
         // Sau khi xu ly, chuyen huong den trang edit-tags.php
         wp_redirect(admin_url('edit-tags.php?taxonomy=category'));
+        exit; // Dam bao khong co ma HTML/PHP tiep theo sau redirect
+    }
+}
+
+
+// viet ham xu ly khi click vao button update post_excerpt for all posts
+add_action('admin_init', 'tuan_dummy_data_handle_update_excerpt_all_posts');
+function tuan_dummy_data_handle_update_excerpt_all_posts()
+{
+
+    // Kiem tra xem co phai la form insert categories hay khong
+    if (($_POST['tuan_update_excerpt_all_posts'] ?? "") !== 'tuan_dummy_data') {
+        return;
+    }
+
+    // Doc noi dung cua tep JSON
+    $excerpt = $_POST['excerpt_for_all_posts'] ?? "";
+
+    // Kiem tra xem chuyen doi co thanh cong khong
+    if (!$excerpt) {
+        echo "Khong the update excerpt";
+        return;
+    } else {
+
+        if (($_POST['tuan_ok_update_excerpt'] ?? "") !== 'tuan_ok_update_excerpt') {
+            return;
+        }
+
+        // update excerpt for all posts
+        $args = array(
+            'post_type' => 'post',
+            'posts_per_page' => -1,
+        );
+
+        $posts = get_posts($args);
+
+        foreach ($posts as $post) {
+            wp_update_post(
+                array(
+                    'ID'           => $post->ID,
+                    'post_excerpt' => $excerpt
+                )
+            );
+        }
+
+        // Sau khi xu ly, chuyen huong den trang edit-tags.php
+        wp_redirect(admin_url('edit.php'));
         exit; // Dam bao khong co ma HTML/PHP tiep theo sau redirect
     }
 }
